@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"framework/app/adapters/clients"
 	"framework/app/adapters/data"
+	"framework/app/models"
 	"framework/app/repository"
 	"net/http"
 
@@ -42,6 +43,23 @@ func DatabaseExample() (response data.ResponseExample, err error) {
 
 	// Send back response to adapter
 	response.Greeting = fmt.Sprintf("We have %v users!", len(data))
+
+	return
+}
+
+// Example controller interaction with database.
+func RedisExample() (response data.ResponseExample, err error) {
+	user := models.User{
+		Name:  "John Doe",
+		Email: "johndoe@mail.com",
+	}
+
+	repository.RedisExample.SaveUser(&user)
+
+	userRedis := repository.RedisExample.GetUser()
+
+	// Send back response to adapter
+	response.Greeting = fmt.Sprintf("Hello %s! We test redis.", userRedis.Name)
 
 	return
 }
