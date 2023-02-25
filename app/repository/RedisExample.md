@@ -1,3 +1,4 @@
+```go
 package repository
 
 import (
@@ -57,3 +58,4 @@ func (tbl *redisExample) GetUser() (user models.User) {
 
 	return
 }
+```
