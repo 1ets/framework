@@ -52,6 +52,7 @@ func App() {
 	// 			Username:    os.Getenv("RABBIT_USERNAME"),
 	// 			Password:    os.Getenv("RABBIT_PASSWORD"),
 	// 			VirtualHost: os.Getenv("RABBIT_VHOST"),
+	// 			AutoAck:     false,
 
 	// 			// Possible to create multiple consumer for multiple purpose.
 	// 			Consumers: []types.IRabbitMQConsumer{
@@ -96,7 +97,7 @@ func App() {
 	// 					},
 	// 				},
 	// 			},
+	// 		},
 	// 	},
-	// },
 	// }
 }

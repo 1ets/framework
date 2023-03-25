@@ -1,3 +1,0 @@
-HTTP
-
-Orchestrator
